@@ -1,19 +1,23 @@
 import { useState } from "react";
-import './styles.css';
+import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
       <Counter />
-    </div>    
+    </div>
   );
 }
 
 function Counter() {
-  const [count, setCount] = useState();
-  return <div>
-    Test
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <div>
+        <button onClick={()=> setCount(c=> c-1)}>-</button>
+        <span>Count: {count}</span>       
+        <button onClick={()=> setCount(c=> c+1)}>+</button>
+      </div>
     </div>
+  );
 }
-
-
